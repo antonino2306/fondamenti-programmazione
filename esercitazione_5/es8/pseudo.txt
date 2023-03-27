@@ -1,0 +1,21 @@
+Esercizio 8
+Progettare ed implementare in C un algoritmo che chieda all’utente di inserire un valore intero N e stampi il
+corrispondente triangolo di Floyd (con N righe). Il triangolo di Floyd è un triangolo rettangolo che contiene
+numeri naturali, definito riempiendo le righe del triangolo con numeri consecutivi e partendo da 1 nell’angolo
+in alto a sinistra.
+
+Leggi il valore di N
+inizializza contatore_righe a 0
+inizializza numero a 0
+
+Finché contatore_righe < N 
+    inizializza contatore_colonne a 0
+
+    Finché contatore_colonne <= contatore_righe
+        incrementa numero di 1
+        stampa numero
+        incrementa contatore_colonne
+    
+    stampa \n 
+    incrementa contatore_righe di 1
+    

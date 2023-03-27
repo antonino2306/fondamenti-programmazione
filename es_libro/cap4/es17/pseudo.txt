@@ -1,0 +1,12 @@
+Programma: 
+    Inizializza num_clienti a 3;
+    Inizializza contatore a 0
+    
+    Finché contatore < num_clienti
+        Leggi i valori di num_conto, lim_credito_iniz, saldo_credito
+        Calcola lim_credito_fin = lim_credito_iniz / 2
+
+        Stampa num_conto lim_credito_fin
+
+        Se saldo_credito > lim_credito_fin allora
+            Stampa "Il saldo di credito supera il limite"

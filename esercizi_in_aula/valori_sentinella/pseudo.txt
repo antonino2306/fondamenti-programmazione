@@ -1,0 +1,3 @@
+Si scriva un programma in C che chieda all’utente di
+inserire dei caratteri fintantoché non viene letta una cifra.
+

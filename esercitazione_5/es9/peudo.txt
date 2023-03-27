@@ -1,0 +1,36 @@
+Progettare ed implementare in C un algoritmo in grado di determinare il primo ed il secondo classificato di una
+gara dei 100 metri a cui partecipano N corridori.
+Il programma dovrà chiedere all’utente:
+• l’inserimento dell’identificativo (un numero intero tra 1 e 255) di ogni partecipante;
+• il tempo impiegato dallo stesso espresso in secondi (per esempio, 9.878).
+Al termine dell’inserimento, il programma dovrà stampare a video l’identificativo ed il tempo del vincitore e del
+secondo classificato. Si assuma che non ci siano due corridori che abbiano impiegato esattamente lo stesso
+tempo e che nessun corridore impieghi più di 20 secondi
+
+Inserisci il numero di corridori
+Inizializza contatore a 0
+
+Finché contatore < numero_corridori
+    Leggi l'identificativo e il tempo del corridore (in secondi)
+    se contatore == 0 
+        tempo_primo = tempo;
+        id_primo = identificatore;
+    
+    se tempo < tempo_primo
+        tempo_secondo = tempo_primo
+        tempo_primo = tempo
+        id_secondo = id_primo
+        id_primo = identificatore
+
+    altrimenti
+        se contatore == 1
+            tempo_secondo = tempo
+            id_secondo = identificatore
+        
+        se (tempo < tempo_secondo)
+            tempo_secondo = tempo
+            id_secondo = identificatore
+    
+
+    stampa primo e secondo arrivato
+

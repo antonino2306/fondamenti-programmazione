@@ -1,0 +1,7 @@
+Programma:
+    Inizializza i = 0, j = 0
+    Finché i < 10
+        Finché j < 10
+            stampa *
+            
+        vai a capo

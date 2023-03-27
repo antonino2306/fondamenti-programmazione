@@ -1,0 +1,11 @@
+Programma:
+    int n
+    int n_pred = predecessore(n)
+    int n_succ = successore(n)
+    stampa predecessore e successore di n
+
+Funzione predecessore(n):
+    return n -1
+
+Funzione successore(n):
+    return n + 1
