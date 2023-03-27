@@ -1,0 +1,59 @@
+Main:
+    inizializza quantità_sale a 0
+    inizializza capienza_barattolo a 1500 grammi
+    inizializza flag a 1
+
+    Scegli che operazione vuoi fare:
+        Sapere quanti grammi di sale ci sono nel barattolo: premere 1
+        Usare il sale: premere 2
+        Riempire il barattolo: premere 3
+        Uscire: premere 4
+
+    Esegui
+
+        Leggi il valore di scelta_utente
+
+        Se scelta_utente = 1 allora
+            chiama la funzione info_barattolo();
+
+        Se scelta_utente = 2 allora
+            chiama la funzione usare_sale();
+
+        Se scelta_utente = 3 allora
+            chiama la funzione riempi_barattolo();
+
+        Se scelta utente = 4:
+        imposta flag a 0 per uscire dal ciclo
+
+    finché flag = 1
+
+--------------------------------------------
+
+Funzione info_barattolo():
+    stampa il valore di quantità_sale
+
+Funzione usare_sale():
+    Leggi in input quanti grammi di sale vuole usare l'utente
+    
+    Se grammi_usati > quantità_sale
+        stampa "Non c'è abbastanza sale
+    altrimenti
+        sottrai a quantità_sale grammi usati
+        stampa "Usato"
+        stampa quantità_sale
+
+    Se quantità_sale < 20
+        stampa "barattolo quasi vuoto, riempilo"
+    
+
+Funzione riempi_barattolo():
+    inzializza flag = 1
+
+    Esegui
+        Leggi quanti grammi di sale vuole inserire l'utente
+        Se grammi_inseriti + quantità_sale > capienza_barattolo
+            stampa "Stai inserendo x grammi di sale in eccesso, inserisci un valore inferiore al precedente"
+        altrimenti
+            aggiungi grammi_inseriti a quantità_sale
+            imposta flag a 0
+    finché flag è uguale a 1

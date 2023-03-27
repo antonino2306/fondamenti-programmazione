@@ -5,10 +5,18 @@ int main() {
     float tempo;
     float tempo_primo, tempo_secondo;
     unsigned int id_primo, id_secondo;
-    const int fattore_conversione = 10000;
 
-    printf("Inserisci numero di corridori: ");
-    scanf("%u", &numero_corridori);
+    do {  
+        printf("Inserisci numero di corridori: ");
+        scanf("%u", &numero_corridori);
+    } while(numero_corridori == 0);
+
+    
+    
+    if (numero_corridori == 1) {
+        printf("Hai partecipato da solo quindi hai vinto\n");
+        return 0;
+    }
 
     for (unsigned int i = 0; i < numero_corridori; i++) {
         printf("Inserisci id e tempo in secondi: ");
@@ -19,7 +27,7 @@ int main() {
             id_primo = identificativo;
         }
 
-        if ((int)(tempo*fattore_conversione) < (int)(tempo_primo*fattore_conversione)) {
+        if (tempo < tempo_primo) {
             tempo_secondo = tempo_primo;
             tempo_primo = tempo;
             id_secondo = id_primo;
@@ -31,7 +39,7 @@ int main() {
                 id_secondo = identificativo;
             }
 
-            if ((int)(tempo*fattore_conversione) < (int)(tempo_secondo*fattore_conversione)) {
+            if (tempo < tempo_secondo) {
                 tempo_secondo = tempo;
                 id_secondo = identificativo;
             }
