@@ -33,14 +33,21 @@ Funzione info_barattolo():
     stampa il valore di quantità_sale
 
 Funzione usare_sale():
-    Leggi in input quanti grammi di sale vuole usare l'utente
+    inizializza flag a 1
+    Esegui
+
+        Leggi in input quanti grammi di sale vuole usare l'utente
     
-    Se grammi_usati > quantità_sale
-        stampa "Non c'è abbastanza sale
-    altrimenti
-        sottrai a quantità_sale grammi usati
-        stampa "Usato"
-        stampa quantità_sale
+        Se grammi_usati > quantità_sale
+            stampa "Non c'è abbastanza sale.
+            stampa la quantità_sale
+        altrimenti
+            flag = 0
+    Finché flag è uguale a 1
+
+    sottrai a quantità_sale grammi usati
+    stampa "Usato"
+    stampa quantità_sale
 
     Se quantità_sale < 20
         stampa "barattolo quasi vuoto, riempilo"

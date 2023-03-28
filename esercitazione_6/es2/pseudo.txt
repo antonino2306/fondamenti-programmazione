@@ -1,0 +1,46 @@
+Main:
+    Inizializza borsellino a 0
+    Inizializza flag a 1
+
+    Leggi in input la somma iniziale inserita dall'utente
+
+    Esegui
+        leggi scelta_utente
+
+        se scelta_utente è uguale a 1
+            borsellino = prelievo()
+
+        se scelta_utente è uguale a 2
+            borsellino = deposito()
+
+        se scelta_utente è uguale a 3
+            visualizza_saldo() 
+
+        se scelta_utente è uguale a 4
+            imposta flag a 0
+
+    Finché flag é uguale a 1
+
+----------------------------------
+
+Funzione prelievo(borsellino):
+    leggi quanti soldi l'utente vuole prelevare
+
+    se i soldi da prelevare sono maggiori del contenuto del borsellino
+        stampa "saldo insufficiente, preleva meno soldi"
+    
+    altrimenti
+        sottrai a borsellino il denaro che l'utente vuole prelevare
+
+    ritorna il valore di borsellino
+
+Funzione deposito(borsellino):
+    leggi quanti soldi l'utente vuole depositare
+
+    aggiungi i soldi da depositare a borsellino
+
+    ritorna il valore di borsellino
+
+Funzione visualizza_saldo(borsellino):
+
+    stampa quanti soldi sono contenuti nel borsellino:
