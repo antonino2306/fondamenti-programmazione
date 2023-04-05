@@ -1,31 +1,35 @@
 #include <stdio.h>
-#define SIZE 6
+#define SIZE 100
 
+int stabilisci_dimensione();
 void inizializza_array(int arr[], size_t size);
-void determina_max(int v1[], int v2[], int max[], size_t size);
-void determina_min(int v1[], int v2[], int min[], size_t size);
-void determina_medio(int v1[], int v2[], int medio[], size_t size);
-void stampa_array(int arr[], size_t size);
+void determina_max(int const v1[], const int v2[], int max[], size_t size);
+void determina_min(int const v1[], const int v2[], int min[], size_t size);
+void determina_medio(int const v1[], int const v2[], int medio[], size_t size);
+void stampa_array(int const arr[], size_t size);
 
 
 int main() {
     int arr1[SIZE] = {0}, arr2[SIZE] = {0}, max[SIZE] = {0}, min[SIZE] = {0}, medio[SIZE] = {0};
+    unsigned int dim;
     
-    printf("Primo array:\n");
-    inizializza_array(arr1, SIZE);
-    printf("Secondo array:\n");
-    inizializza_array(arr2, SIZE);
+    dim = stabilisci_dimensione();
 
-    determina_max(arr1, arr2, max, SIZE);
-    determina_min(arr1, arr2, min, SIZE);
-    determina_medio(arr1, arr2, medio, SIZE);
+    printf("Primo array:\n");
+    inizializza_array(arr1, dim);
+    printf("Secondo array:\n");
+    inizializza_array(arr2, dim);
+
+    determina_max(arr1, arr2, max, dim);
+    determina_min(arr1, arr2, min, dim);
+    determina_medio(arr1, arr2, medio, dim);
 
     printf("Max: ");
-    stampa_array(max, SIZE);
+    stampa_array(max, dim);
     printf("Min: ");
-    stampa_array(min, SIZE);
+    stampa_array(min, dim);
     printf("Medio: ");
-    stampa_array(medio, SIZE);
+    stampa_array(medio, dim);
     
 
     return 0;
@@ -39,7 +43,21 @@ void inizializza_array(int arr[], size_t size) {
     printf("\n\n");
 }
 
-void determina_max(int v1[], int v2[], int max[], size_t size)
+int stabilisci_dimensione()
+{
+    unsigned int dim;
+    printf("Inserisci la dimensione dell'array (MAX 100)");
+    printf("\n> ");
+    scanf("%d", &dim);
+
+    if (dim > 100) {
+        printf("Hai inserito un valore troppo grande lo abbasso a 100");
+        dim = 100;
+    }
+    return dim;
+}
+
+void determina_max(const int v1[], const int v2[], int max[], size_t size)
 {
     for (size_t i = 0; i < size; i++) {
         if (v1[i] >= v2[i]) {
@@ -51,7 +69,7 @@ void determina_max(int v1[], int v2[], int max[], size_t size)
     }
 }
 
-void determina_min(int v1[], int v2[], int min[], size_t size)
+void determina_min(int const v1[], int const v2[], int min[], size_t size)
 {
     for (size_t i = 0; i < size; i++) {
         if (v1[i] <= v2[i]) {
@@ -63,14 +81,14 @@ void determina_min(int v1[], int v2[], int min[], size_t size)
     }
 }
 
-void determina_medio(int v1[], int v2[], int medio[], size_t size)
+void determina_medio(int const v1[], const int v2[], int medio[], size_t size)
 {
     for (size_t i = 0; i < size; i++) {
         medio[i] = (v1[i] + v2[i]) / 2;
     }
 }
 
-void stampa_array(int arr[], size_t size)
+void stampa_array(const int arr[], size_t size)
 {
     for (size_t i = 0; i < size; i++)
     {
