@@ -1,0 +1,37 @@
+Programma: 
+    SIZE 10
+    quotazioni[SIZE] = {0}
+    Inizializza_array
+    titolo_costante = controlla_quotazioni
+    stampa titolo_costante
+    
+
+Funzione Inizializza_array:
+    parametri: arr[], size
+    i = 0
+    Finché i < size esegui
+        Genera un numero casuale compreso tra 1 e 100
+        inserisci il numero in arr[i]
+        incrementa i di 1
+
+
+Funzione controlla_quotazioni:
+    parametri: arr[], size
+    giorni_costanti = 0
+    i = 0
+    Finché i < size-1 esegui
+        serie = 0
+        j = i + 1
+        Finché j < size && serie != -1 esegui
+            se arr[i] == arr[j]
+                serie++
+            altrimenti
+                se serie != 0 allora
+                    giorni_costanti++
+                
+                serie = -1
+            j++
+        i++
+    return giorni_costanti
+
+
