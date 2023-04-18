@@ -1,0 +1,105 @@
+Snake game:
+    Creare la mappa
+    Inserire snake (@) nella mappa
+    Far muovere snake quando premo WASD
+    Far apparire sulla mappa ciò che snake deve mangiare per crescere (*)
+    Fare crescere snake (@) quando mangia (*)
+    Fare terminare il gioco quando snake tocca una parte del suo corpo
+
+
+Funzione crea_mappa:
+    parametri mappa[][], altezza, base
+
+    i = 0
+    Finché i < altezza esegui
+        mappa[i][0] = '|'
+        j = 1
+        
+        Finché j < base - 1 esegui
+            se i == 0 || i == altezza - 1 allora
+                mappa[i][j] = '-'
+            altrimenti
+                mappa[i][j] = ' '
+        
+        mappa[i][base-1] = '|'
+
+
+Funzione posiziona_personaggio:
+    parametri: mappa[][] altezza, base, pg
+
+    x = estrai un numero casuale tra 0 e base
+    y = estrai un numero casuale tra 0 e altezza
+
+    mappa[y][x] = pg
+
+Funzione cerca_snake_x:
+    parametri: mappa[][], altezza, base, pg
+
+    i = 0
+    Finché i < altezza esegui
+        j = 0
+        finché j < base esegui
+            se mappa[i][j] == '@'
+                return j
+    
+
+Funzione cerca_snake_y:
+    parametri: mappa[][], altezza, base, pg
+
+    i = 0
+    Finché i < altezza esegui
+        j = 0
+        finché j < base esegui
+            se mappa[i][j] == '@'
+                return i
+
+
+Funzione muovi_pg:
+    parametri: mappa[][], altezza, base, pg
+    gioca = 1
+    comando_precedente = 'p'
+
+    coord_x = cerca_snake_x
+    coord_y = cerca_snake_y
+
+    esegui
+        leggi comando_attuale
+        cerca_snake sulla mappa
+
+        se comando_attuale == 'a'
+            se comando_attuale == comando_precedente allora
+                sposta_pg
+
+        se comando_attuale == 'd'
+                se comando_attuale == comando_precedente allora
+                    sposta_pg
+        
+        se comando_comanto attuale == 'w'
+            se comando_attuale == comando_precedente allora 
+                sposta_pg
+        se comando_attuale == 's'
+            se comando_attuale == comando_precedente allora
+                sposta snake di 1 in basso
+
+        altrimenti:
+            non fare niente
+        
+
+        comando_precedente = comando_attuale
+
+    finché (gioca == 1)
+
+
+
+Funzione genera_cibo:
+    parametri: mappa[][], altezza, base
+     
+    pg_x = cerca_snake_x
+    pg_y = cerca_snake_y
+
+    Esegui
+        cibo_x = genera numero tra 0 e base
+        cibo_y = genera numero tra 0 e altezza
+    Finche cibo_x == pg_x || cibo_y == pg_y
+
+
