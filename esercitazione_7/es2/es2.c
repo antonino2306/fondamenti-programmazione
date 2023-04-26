@@ -74,11 +74,6 @@ int determina_secondo_max(int arr[], size_t size, int massimo)
 
     return massimo2;
 
-
-
-
-
-    
 }
 
 int determina_secondo_min(int arr[], size_t size, int minimo)
