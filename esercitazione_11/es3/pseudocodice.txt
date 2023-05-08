@@ -1,0 +1,7 @@
+Leggi in input il numero di corridori
+
+Alloca dinamicamente un array di puntatori per memorizzare id e tempo dei corridori
+
+Determina il minimo e il secondo minimo dei tempi in modo da avere i primi due classificati
+
+Stampa i risultati
