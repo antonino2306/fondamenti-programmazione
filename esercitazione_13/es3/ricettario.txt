@@ -1,0 +1,8 @@
+pasta,2,anelletti,100,carne,100,20,primo;
+petto di pollo,1,petto di pollo,200,30,secondo;
+riso,2,riso,100,tonno,200,20,primo;
+pesce,2,merluzzo,350,salmone,200,10,secondo;
+gelato,1,cioccolato,60,0,dolce;
+pesce spada,2,pesce spada,300,limone,10,12,secondo;
+filetto di salmone,1,salmone,200,12,secondo;
+insalata,2,lattuga,200,bresaola,150,0,contorno;

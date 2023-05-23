@@ -30,15 +30,21 @@ int main(void){
 
     stampa_matrice(matrice, righe, colonne);
 
+    printf("%p\n", matrice);
+
     ridimensiona_righe(matrice, &righe, colonne);
+
+    printf("%p\n", matrice);
+
+    for (size_t i = 0; i < colonne; i++) {
+        matrice[righe - 1][i] = 12; 
+    }
+    
+    stampa_matrice(matrice, righe, colonne);
 
     ridimensiona_colonne(matrice, righe, &colonne);
     
-    // for (size_t i = 0; i < colonne; i++) {
-    //     matrice[righe - 1][i] = 12; 
-    // }
      
-    stampa_matrice(matrice, righe, colonne);
 
     for (size_t i = 0; i < righe; i++) {
         free(matrice[i]);
@@ -97,7 +103,11 @@ void ridimensiona_righe(int **matrice, size_t *righe, size_t colonne)
     printf("Inserisci il nuovo numero di righe: ");
     scanf("%lu", &nuove_righe);
     
+    printf("%p\n", matrice);
+
     matrice = (int**)realloc(matrice, nuove_righe * sizeof(int));
+
+    printf("%p\n", matrice);
 
     if (nuove_righe < *righe) {
         for (size_t i = nuove_righe; i < *righe; i++) {

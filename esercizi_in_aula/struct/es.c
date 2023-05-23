@@ -10,6 +10,8 @@ void stampa_impiegato(struct Impiegato i);
 int main() {
     struct Impiegato giuseppe;
 
+    giuseppe.anagrafica.nome = (char*)calloc(20, sizeof(char));
+
     printf("Inserisci nome: ");
     scanf(" %20[^\n]", giuseppe.anagrafica.nome);
 
@@ -25,9 +27,11 @@ int main() {
     printf("Inserisci stipendio: ");
     scanf("%u", &giuseppe.stripendio);
 
-   system("clear");
+    system("clear");
 
-   stampa_impiegato(giuseppe);
+    stampa_impiegato(giuseppe);
+
+    free(giuseppe.anagrafica.nome);
 
     return 0;
 

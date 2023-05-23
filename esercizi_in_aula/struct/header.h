@@ -7,7 +7,7 @@ struct Data {
 };
 
 struct Persona {
-    char nome[20];
+    char *nome;
     unsigned int eta;
     char sesso;
     struct Data nascita;
