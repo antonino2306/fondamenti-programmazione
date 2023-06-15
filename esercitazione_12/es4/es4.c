@@ -16,7 +16,6 @@ int main() {
 void stampa_tartaglia(unsigned int n)
 {
 
-
     if (n == 0) {
         printf("%u\n", coeff_bin(0, 0));
     }

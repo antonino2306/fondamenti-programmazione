@@ -15,7 +15,7 @@ void libera_lista(Nodo *head);
 Nodo *inserisci_in_ordine(Nodo *head);
 unsigned int conta_occorrenze(Nodo* head, int numero);
 Nodo *rimuovi_per_valore(Nodo *head, int numero);
-Nodo *eleva_al_quadrato(Nodo *head);
+void eleva_al_quadrato(Nodo *head);
 
 int main() {
 
@@ -51,7 +51,7 @@ int main() {
             break;
         
         case 'd':
-            head = eleva_al_quadrato(head);
+            eleva_al_quadrato(head);
             stampa_lista(head);
             break;
         
@@ -197,14 +197,11 @@ Nodo *rimuovi_per_valore(Nodo *head, int numero)
     return head;
 }
 
-Nodo *eleva_al_quadrato(Nodo *head)
+void eleva_al_quadrato(Nodo *head)
 {
-    Nodo *tmp = head;
-
-    while (tmp != NULL) {
-        tmp->num *= tmp->num;
-        tmp = tmp->next;
+    while (head != NULL) {
+        head->num *= head->num;
+        head = head->next;
     }
-    return head;
 }
 

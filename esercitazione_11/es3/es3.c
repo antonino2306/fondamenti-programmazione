@@ -71,7 +71,7 @@ void determina_primo_secondo(float *tempi, const size_t numero_part, size_t *ind
     }
 
     float t_2min;
-    if (indice_primo == 0) {
+    if (*indice_primo == 0) {
         t_2min = *(tempi + 1);
         *indice_secondo = 1;
     }

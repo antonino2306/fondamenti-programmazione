@@ -6,8 +6,6 @@ void stampa_matrice(int** matrice, size_t righe, size_t colonne);
 void ridimensiona_colonne(int** matrice, size_t righe, size_t *colonne);
 void ridimensiona_righe(int** matrice, size_t *righe, size_t colonne);
 
-// todo modificare le funzioni in modo che liberino memoria se riduco la matrice
-
 int main(void){
     size_t righe, colonne;
     int **matrice;

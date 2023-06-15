@@ -98,12 +98,13 @@ extern void inserisci_ricette(Pietanza *array, size_t num_p, size_t indice_inizi
 extern void aggiungi_ricetta(Pietanza **array, size_t *num_p) {
     
     (*num_p)++;
-    printf("num_p = %lu\n", *num_p);
     
+    // Inserisci la prima pietanza
     if (*num_p == 1) {
         *array = (Pietanza*)calloc(*num_p, sizeof(Pietanza));
     }
     else {
+        // Aggiungi una pietanza
         *array = (Pietanza*)realloc(*array, (*num_p)*sizeof(Pietanza));
     }
 

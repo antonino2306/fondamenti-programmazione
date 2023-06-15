@@ -138,6 +138,7 @@ Prodotto *elimina_promozione(Prodotto *volantino, char nome[]) {
             if (volantino != NULL) {
                 volantino->prec = NULL;
             }
+            free(tmp);
 
         }
         else {

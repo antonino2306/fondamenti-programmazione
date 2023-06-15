@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #define MAXLENGHT 30
 
-// todo sistemare la stampa degli ingredienti e organizzare meglio il codice
-
 struct pietanza {
 
     char nome[MAXLENGHT];

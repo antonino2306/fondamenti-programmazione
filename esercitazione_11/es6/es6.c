@@ -19,7 +19,7 @@ int main() {
 
     riempi_matrice(matrice, righe, colonne);
 
-     int **mat_rumori = (int**)calloc(righe, sizeof(int));
+    int **mat_rumori = (int**)calloc(righe, sizeof(int));
      
     for (size_t i = 0; i < righe; i++) {
         mat_rumori[i] = (int*)calloc(colonne, sizeof(int));
